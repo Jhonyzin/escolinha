@@ -1,11 +1,3 @@
-#escola
-#usuarios
-#aluno
-#pai
-#professor
-#diretor
-
-from ast import Return
 from dataclasses import dataclass, field
 import datetime
 from typing import List, Optional
@@ -61,6 +53,7 @@ class Aluno(Usuarios):
     nascimento: int
     email: str
     materias: List[str] = field(default_factory=list)
+    pai: List[str] =  field(default_factory=list)
 
 @dataclass
 class MateriaAluno:
@@ -74,8 +67,6 @@ class Professor(Usuarios):
     materia: str
 
 @dataclass
-class pai(Usuarios):
+class Pai(Usuarios):
     nascimento: str
     email: str
-    filhovinculado: List[str] = field(default_factory=list)
-
