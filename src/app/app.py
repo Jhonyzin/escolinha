@@ -41,7 +41,7 @@ class App(ctk.CTk):
         self.title("Sistema Demo - Login/Cadastro/Áreas")
         self.geometry(f"{APP_W}x{APP_H}")
         self.resizable(False, False)
-        self.escola  =  modelos.Escola("Eds")
+        self.escola  =  modelos.Escola("Escola do Professor Girafales")
         self.usuario_atual = None
         self.login_role = ctk.StringVar(value="aluno")
         self.container = ctk.CTkFrame(self, fg_color=RIGHT_BG)
@@ -89,14 +89,10 @@ class LoginFrame(ctk.CTkFrame):
         left_w = int(APP_W * 0.48)
         left_frame = ctk.CTkFrame(self, width=left_w, height=APP_H, fg_color=AFYA_PINK, corner_radius=0)
         left_frame.place(x=0, y=0)
-        
-        if controller.bg_img:
-            lbl = ctk.CTkLabel(left_frame, image=controller.bg_img, text="")
-            lbl.place(relx=0.5, rely=0.5, anchor="center")
-        else:
-            ctk.CTkLabel(left_frame, text="Afya", font=("Segoe UI", 60, "bold"), text_color="white").place(relx=0.5,
-                                                                                                           rely=0.5,
-                                                                                                           anchor="center")
+
+        lbl_text = ctk.CTkLabel(left_frame, text="Girafales", font=("Segoe UI", 60, "bold"), text_color="white")
+        lbl_text.place(relx=0.5, rely=0.5, anchor="center")
+
 
         card_width = APP_W - left_w - 40
         self.card = ctk.CTkFrame(self, width=card_width, height=460, fg_color=CARD_BG, corner_radius=20)
@@ -219,13 +215,8 @@ class RegisterFrame(ctk.CTkFrame):
         left_frame = ctk.CTkFrame(self, width=left_w, height=APP_H, fg_color=AFYA_PINK, corner_radius=0)
         left_frame.place(x=0, y=0)
 
-        if controller.bg_img:
-            lbl = ctk.CTkLabel(left_frame, image=controller.bg_img, text="")
-            lbl.place(relx=0.5, rely=0.5, anchor="center")
-        else:
-            ctk.CTkLabel(left_frame, text="Afya", font=("Segoe UI", 60, "bold"), text_color="white").place(relx=0.5,
-                                                                                                           rely=0.5,
-                                                                                                           anchor="center")
+        lbl_text = ctk.CTkLabel(left_frame, text="Girafales", font=("Segoe UI", 60, "bold"), text_color="white")
+        lbl_text.place(relx=0.5, rely=0.5, anchor="center")
 
         card = ctk.CTkFrame(self, width=APP_W - left_w - 40, height=600, fg_color=CARD_BG, corner_radius=18)
         card.place(x=left_w + 20, y=30)
